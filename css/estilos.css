@@ -1,0 +1,242 @@
+:root {
+  --brand-primary: #0D3B4F;
+  --brand-secondary: #57C7AC;
+  --brand-light: #F5F1E8;
+  --text-main: var(--brand-primary);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background: var(--brand-light);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Header / Nav */
+.header {
+  background: var(--brand-light);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.nav.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-main);
+}
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.menu a {
+  font-weight: bold;
+  transition: color 0.3s;
+}
+.menu a:hover {
+  color: var(--brand-secondary);
+}
+
+/* Container y Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.pt-24 {
+  padding-top: 6rem;
+}
+.mt-16 {
+  margin-top: 4rem;
+}
+.mt-8 {
+  margin-top: 2rem;
+}
+.flex {
+  display: flex;
+}
+.gap-4 {
+  gap: 1rem;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.hidden {
+  display: none !important;
+}
+
+/* Títulos */
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-main);
+}
+
+/* Galería */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media(min-width: 640px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+}
+@media(min-width: 1024px) {
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+}
+.card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 0.5rem 0;
+}
+
+/* Reseñas */
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media(min-width: 768px) {
+  .grid-4 { grid-template-columns: 1fr 1fr; }
+}
+@media(min-width: 1024px) {
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
+.review {
+  background: var(--brand-light);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Formularios */
+.form-card {
+  margin: 2rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.form-card input,
+.form-card textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* Chatbot */
+.chatbot-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: var(--brand-secondary);
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.chatbot-panel {
+  position: fixed;
+  bottom: 5rem;
+  left: 1.5rem;
+  width: 20rem;
+  background: #000;
+  color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  overflow: hidden;
+}
+.chat-header,
+.chat-footer {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chat-body {
+  padding: 0.5rem;
+  height: 12rem;
+  overflow-y: auto;
+}
+.chat-footer input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  margin-right: 0.5rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.modal-content input,
+.modal-content textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+.modal-content button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
