@@ -1,0 +1,12 @@
+# ───────────────────────────────────────────────
+# Publica desde la raíz y redirige todo a index.html
+# ───────────────────────────────────────────────
+
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
