@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitya Living - Portal de Alquileres</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --brand-primary: #0D3B4F;
+      --brand-secondary: #57C7AC;
+      --brand-light: #F5F1E8;
+      --chart-bg: rgba(87, 199, 172, 0.2);
+      --text-main: var(--brand-primary);
+      --text-alt: var(--brand-secondary);
+    }
+  </style>
+</head>
+<body class="bg-brand-light text-text-main font-sans relative">
+
+  <!-- HEADER -->
+  <header class="bg-brand-light shadow-md">
+    <nav class="container mx-auto p-4 flex justify-between items-center">
+      <a href="#" class="flex items-center space-x-2">
+        <img src="logo-habitya.svg" alt="Logo Habitya" class="h-8">
+        <span class="text-2xl font-bold" style="color: var(--text-main)">Habitya Living</span>
+      </a>
+      <ul class="flex space-x-8">
+        <li><a href="#pisos" class="hover:text-text-alt">Pisos</a></li>
+        <li><a href="#inquilinos" class="hover:text-text-alt">Inquilinos</a></li>
+        <li><a href="#propietarios" class="hover:text-text-alt">Propietarios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ÁREA DE INQUILINOS -->
+  <section id="inquilinos" class="container mx-auto py-16">
+    <!-- omitted -->
+  </section>
+
+  <!-- ÁREA DE PROPIETARIOS -->
+  <section id="propietarios" class="container mx-auto py-16">
+    <!-- omitted -->
+  </section>
+
+  <!-- MODAL SUBIR FACTURA -->
+  <div id="invoice-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-2xl shadow-lg w-96 p-6">
+      <h3 class="text-xl font-semibold mb-4" style="color: var(--text-main)">Subir Factura</h3>
+      <div class="mb-4">
+        <label class="block mb-1 font-medium" style="color: var(--text-main)">Importe (€)</label>
+        <input id="modal-amount" type="number" min="0" class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-brand-secondary" />
+      </div>
+      <div class="mb-4">
+        <label class="block mb-1 font-medium" style="color: var(--text-main)">Descripción</label>
+        <textarea id="modal-desc" class="w-full border rounded-lg p-2 focus:ring-2 focus:ring-brand-secondary" rows="3"></textarea>
+      </div>
+      <div class="flex justify-end space-x-2">
+        <button onclick="closeModal()" class="px-4 py-2 rounded-lg border hover:bg-gray-100">Cancelar</button>
+        <button onclick="submitInvoice()" class="px-4 py-2 bg-brand-secondary text-white rounded-lg hover:bg-teal-400">Subir</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-brand-light text-text-main py-6 mt-16 text-center">
+    <p>&copy; 2025 Habitya Living. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Modal
+    function openModal() { document.getElementById('invoice-modal').classList.remove('hidden'); }
+    function closeModal() { document.getElementById('invoice-modal').classList.add('hidden'); document.getElementById('modal-amount').value=''; document.getElementById('modal-desc').value=''; }
+    function submitInvoice() {
+      const amount = document.getElementById('modal-amount').value;
+      const desc = document.getElementById('modal-desc').value;
+      if (!amount || !desc) return alert('Rellena todos los campos');
+      const invs = JSON.parse(localStorage.getItem('invoices')||'[]');
+      invs.push({ date: new Date().toLocaleDateString(), amount, description: desc });
+      localStorage.setItem('invoices', JSON.stringify(invs));
+      closeModal(); alert('Factura subida correctamente');
+    }
+
+    // Propietarios
+    function loginOwner(e) { e.preventDefault(); document.getElementById('login-owner').classList.add('hidden'); document.getElementById('dashboard-owner').classList.remove('hidden'); initIncomeChart(); }
+    function initIncomeChart() {
+      const totalIncome = 750*12, pendingIncome = 750*2;
+      document.getElementById('totalIncome').textContent = `€${totalIncome}`;
+      document.getElementById('pendingIncome').textContent = `€${pendingIncome}`;
+      new Chart(document.getElementById('incomeChart'), { type:'doughnut', data:{ labels:['Ingresos','Pendiente'], datasets:[{ data:[totalIncome,pendingIncome], backgroundColor:['var(--brand-secondary)','var(--chart-bg)'], hoverOffset:10 }] }, options:{ cutout:'70%', responsive:true, plugins:{ tooltip:{ callbacks:{ label:ctx=>`${ctx.label}: €${ctx.parsed}` } }, legend:{ position:'bottom', labels:{ color:'var(--text-main)', font:{ size:14 } } } } } });
+    }
+    function verContratos(){ alert('Redirigiendo a contratos...'); }
+    function manageProperties(){ alert('Abriendo panel de gestión de propiedades...'); }
+    function scheduleMaintenance(){ alert('Abriendo calendario de mantenimiento...'); }
+    function solicitarServicioOwner(){ const tipo=document.getElementById('owner-service-type').value; if(!tipo){alert('Selecciona un servicio');return;} if(tipo==='Subir factura'){openModal();} else alert(`Solicitud enviada: ${tipo}`); }
+
+    // Inquilinos omitted for brevity
+  </script>
+</body>
+</html>
