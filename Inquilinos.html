@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitya Living - Inquilinos</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">Habitya Living</a>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="inquilinos.html">Inquilinos</a></li>
+        <li><a href="propietarios.html">Propietarios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container pt-24">
+    <h1 class="title">Área de Inquilinos</h1>
+
+    <div id="login-box" class="form-card">
+      <h3>Acceso Inquilinos</h3>
+      <input id="tenant-user" placeholder="Usuario">
+      <input id="tenant-pass" type="password" placeholder="Contraseña">
+      <button onclick="loginInquilino(event)">Entrar</button>
+    </div>
+
+    <div id="dashboard-inquilino" class="hidden mt-8">
+      <h2>Estado de tu Alquiler</h2>
+      <canvas id="progressChart"></canvas>
+      <p>Pagado: <span id="paidAmount"></span></p>
+      <p>Restante: <span id="remainingAmount"></span></p>
+      <button onclick="mostrarFacturas()">Ver Facturas</button>
+      <ul id="invoices"></ul>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
