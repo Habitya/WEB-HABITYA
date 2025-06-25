@@ -6,7 +6,7 @@
   <title>Habitya Living - Inicio</title>
   <!-- Estilos básicos -->
   <link rel="stylesheet" href="css/estilos.css">
-  <!-- AOS Animations CSS sin integrity para evitar errores -->
+  <!-- AOS Animations CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <style>
     /* Hover y sombras para tarjetas */
@@ -15,7 +15,7 @@
     .card img { width: 100%; height: auto; transition: transform 0.4s ease; }
     .card:hover img { transform: scale(1.1); }
     /* Títulos animados */
-    .title { position: relative; display: inline-block; }
+    .title { position: relative; display: inline-block; margin-bottom: 1rem; }
     .title::after { content: ''; position: absolute; width: 50%; height: 4px; background: #DAA520; bottom: -6px; left: 25%; transition: width 0.4s ease; }
     .title:hover::after { width: 100%; left: 0; }
     /* Chatbot thumbnail */
@@ -27,15 +27,15 @@
 </head>
 <body>
   <!-- HEADER -->
-  <header class="header" data-aos="fade-down">
+  <header class="header" data-aos="fade-down" data-aos-duration="800">
     <nav class="nav container">
-      <a href="index.html" class="logo">Habitya Living</a>
-      <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="pisos.html">Pisos</a></li>
-        <li><a href="inquilinos.html">Inquilinos</a></li>
-        <li><a href="propietarios.html">Propietarios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
+      <a href="index.html" class="logo" data-aos="zoom-in" data-aos-delay="100">Habitya Living</a>
+      <ul class="menu" data-aos="fade-down" data-aos-delay="200">
+        <li data-aos="fade-right" data-aos-delay="300"><a href="index.html">Inicio</a></li>
+        <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
+        <li data-aos="fade-right" data-aos-delay="400"><a href="inquilinos.html">Inquilinos</a></li>
+        <li data-aos="fade-right" data-aos-delay="450"><a href="propietarios.html">Propietarios</a></li>
+        <li data-aos="fade-right" data-aos-delay="500"><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
@@ -44,21 +44,21 @@
     <!-- GALERÍA DE PISOS -->
     <section id="piso-gallery" data-aos="fade-up" data-aos-duration="800">
       <h1 class="title" data-aos="zoom-in">Nuestros Pisos Destacados</h1>
-      <div class="grid-3">
-        <div class="card" data-aos="fade-up" data-aos-delay="100">
-          <img src="images/piso1_salon.jpg" alt="Piso Céntrico">
-          <h3>Piso Céntrico</h3>
-          <p>2 hab · 1 baño · 75 m²</p>
-        </div>
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <img src="images/piso2_salon.jpg" alt="Ático Moderno">
-          <h3>Ático Moderno</h3>
-          <p>1 hab · 1 baño · 60 m²</p>
-        </div>
+      <div class="grid-3" data-aos="zoom-in" data-aos-delay="200">
         <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/piso1_salon.jpg" alt="Piso Céntrico">
+          <h3 data-aos="fade-up" data-aos-delay="400">Piso Céntrico</h3>
+          <p data-aos="fade-up" data-aos-delay="450">2 hab · 1 baño · 75 m²</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+          <img src="images/piso2_salon.jpg" alt="Ático Moderno">
+          <h3 data-aos="fade-up" data-aos-delay="600">Ático Moderno</h3>
+          <p data-aos="fade-up" data-aos-delay="650">1 hab · 1 baño · 60 m²</p>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="700">
           <img src="images/piso3_salon.jpg" alt="Estudio Acogedor">
-          <h3>Estudio Acogedor</h3>
-          <p>Estudio · 1 baño · 45 m²</p>
+          <h3 data-aos="fade-up" data-aos-delay="800">Estudio Acogedor</h3>
+          <p data-aos="fade-up" data-aos-delay="850">Estudio · 1 baño · 45 m²</p>
         </div>
       </div>
     </section>
@@ -66,38 +66,38 @@
     <!-- VALORACIONES -->
     <section id="reviews" class="mt-16" data-aos="fade-up" data-aos-duration="800">
       <h2 class="title" data-aos="zoom-in">Valoraciones en Internet</h2>
-      <div class="grid-4">
-        <div class="review" data-aos="flip-left" data-aos-delay="100">“Excelente servicio y atención rápida.”<br><strong>- Juan P.</strong></div>
-        <div class="review" data-aos="flip-left" data-aos-delay="200">“Pisos impecables y bien ubicados.”<br><strong>- María S.</strong></div>
-        <div class="review" data-aos="flip-left" data-aos-delay="300">“Proceso de alquiler muy sencillo.”<br><strong>- Luis G.</strong></div>
-        <div class="review" data-aos="flip-left" data-aos-delay="400">“Recomendable para todos.”<br><strong>- Ana R.</strong></div>
+      <div class="grid-4" data-aos="zoom-in" data-aos-delay="200">
+        <div class="review" data-aos="flip-left" data-aos-delay="300">“Excelente servicio y atención rápida.”<br><strong>- Juan P.</strong></div>
+        <div class="review" data-aos="flip-left" data-aos-delay="350">“Pisos impecables y bien ubicados.”<br><strong>- María S.</strong></div>
+        <div class="review" data-aos="flip-left" data-aos-delay="400">“Proceso de alquiler muy sencillo.”<br><strong>- Luis G.</strong></div>
+        <div class="review" data-aos="flip-left" data-aos-delay="450">“Recomendable para todos.”<br><strong>- Ana R.</strong></div>
       </div>
     </section>
   </main>
 
   <!-- CHATBOT PANEL -->
-  <div id="asistente-virtual" class="chatbot-panel hidden" data-aos="fade-left">
+  <div id="asistente-virtual" class="chatbot-panel hidden" data-aos="fade-left" data-aos-duration="600">
     <div class="chat-header">
-      <h3 id="asistente-title">Asistente Virtual</h3>
-      <img src="images/chatbot_chica.jpg" alt="Asistente" class="assistant-thumb">
-      <button onclick="toggleAsistente()">×</button>
+      <h3 id="asistente-title" data-aos="fade-down" data-aos-delay="100">Asistente Virtual</h3>
+      <img src="images/chatbot_chica.jpg" alt="Asistente" class="assistant-thumb" data-aos="zoom-in" data-aos-delay="200">
+      <button onclick="toggleAsistente()" data-aos="fade-down" data-aos-delay="300">×</button>
     </div>
-    <div id="contenedor-chat" class="chat-body"></div>
-    <div class="chat-footer">
+    <div id="contenedor-chat" class="chat-body" data-aos="fade-up" data-aos-delay="400"></div>
+    <div class="chat-footer" data-aos="fade-up" data-aos-delay="500">
       <input id="input-chat" placeholder="Escribe tu pregunta..." onkeydown="if(event.key==='Enter') enviarMensaje()">
       <button onclick="enviarMensaje()">➤</button>
     </div>
   </div>
 
   <!-- MODAL SUBIR FACTURA -->
-  <div id="invoice-modal" class="modal hidden" data-aos="zoom-in">
+  <div id="invoice-modal" class="modal hidden" data-aos="zoom-in" data-aos-delay="300">
     <div class="modal-content">
       <h3>Subir Factura</h3>
       <label>Importe (€)</label>
       <input id="modal-amount" type="number">
       <label>Descripción</label>
       <textarea id="modal-desc"></textarea>
-      <div class="flex justify-end gap-2">
+      <div class="flex justify-end gap-2" data-aos="fade-up" data-aos-delay="400">
         <button onclick="closeModal()">Cancelar</button>
         <button onclick="submitInvoice()">Subir</button>
       </div>
@@ -108,13 +108,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      if (window.AOS) {
-        AOS.init({ once: true, duration: 600, easing: 'ease-in-out' });
-      } else {
-        console.error('AOS library failed to load.');
-      }
+      if (window.AOS) { AOS.init({ once: true, duration: 600, easing: 'ease-in-out' }); }
+      else { console.error('AOS library failed to load.'); }
     });
   </script>
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
 </body>
 </html>
+
