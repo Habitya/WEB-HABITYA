@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitya Living - Propietarios</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">Habitya Living</a>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="inquilinos.html">Inquilinos</a></li>
+        <li><a href="propietarios.html">Propietarios</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container pt-24">
+    <h1 class="title">Área de Propietarios</h1>
+
+    <div id="login-owner" class="form-card">
+      <h3>Acceso Propietarios</h3>
+      <input id="owner-user" placeholder="Usuario">
+      <input id="owner-pass" type="password" placeholder="Contraseña">
+      <button onclick="loginOwner(event)">Entrar</button>
+    </div>
+
+    <div id="dashboard-owner" class="hidden mt-8">
+      <h2>Resumen de Ingresos</h2>
+      <canvas id="incomeChart"></canvas>
+      <p>Totales: <span id="totalIncome"></span></p>
+      <p>Pendiente: <span id="pendingIncome"></span></p>
+      <div class="flex gap-4 mt-4">
+        <button onclick="verContratos()">Contratos</button>
+        <button onclick="openModal()">Subir Factura</button>
+        <button onclick="manageProperties()">Propiedades</button>
+        <button onclick="scheduleMaintenance()">Mantenimiento</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
