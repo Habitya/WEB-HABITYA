@@ -7,7 +7,7 @@ async function run() {
   const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
   // 2. Lee el HTML que quieras actualizar
-  const filePath = 'html/index.html';
+  const filePath = 'index.html';
   const original = fs.readFileSync(filePath, 'utf8');
 
   // 3. Prepara el prompt
