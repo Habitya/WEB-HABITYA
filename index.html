@@ -1,28 +1,15 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encuentra tu hogar ideal con Habitya Living. Ofrecemos una amplia variedad de pisos y apartamentos en las mejores ubicaciones.">
-  <meta name="keywords" content="alquiler, pisos, apartamentos, inmobiliaria, Habitya Living, Bilbao, Getxo">
-  <meta name="author" content="Habitya Living">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Habitya Living - Encuentra tu hogar ideal">
-  <meta property="og:description" content="Descubre pisos y apartamentos en las mejores ubicaciones con Habitya Living.">
-  <meta property="og:image" content="url_de_la_imagen_destacada.jpg">
-  <meta property="og:url" content="https://www.habityaliving.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Habitya Living - Encuentra tu hogar ideal">
-  <meta name="twitter:description" content="Descubre pisos y apartamentos en las mejores ubicaciones con Habitya Living.">
-  <meta name="twitter:image" content="url_de_la_imagen_destacada.jpg">
   <title>Habitya Living - Inicio</title>
   <link rel="stylesheet" href="css/estilos.css">
   <!-- AOS Animations CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 </head>
 <body>
-  <!-- Navbar estilo Airbnb -->
+  <!-- Navbar -->
   <header class="header" data-aos="fade-down">
     <nav class="nav container">
       <a href="index.html" class="logo">Habitya Living</a>
@@ -36,53 +23,52 @@
     </nav>
   </header>
 
-  <!-- Hero + Búsqueda estilo Idealista + Airbnb -->
+  <!-- Hero + Buscador Elegante -->
   <section class="hero" data-aos="zoom-in">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <h1 class="title" data-aos="fade-up" data-aos-delay="200">
         Encuentra tu hogar ideal con Habitya Living
       </h1>
-      <form class="search-idealista" action="pisos.html" method="GET" data-aos="fade-up" data-aos-delay="400">
-        <div class="filter-group">
-          <label>Localidad</label>
-          <input type="text" name="location" placeholder="Ciudad, barrio o calle" required />
-        </div>
-        <div class="filter-group">
-          <label>Precio mínimo</label>
-          <input type="number" name="price_min" placeholder="€ desde" />
-        </div>
-        <div class="filter-group">
-          <label>Precio máximo</label>
-          <input type="number" name="price_max" placeholder="€ hasta" />
-        </div>
-        <div class="filter-group">
-          <label>Habitaciones</label>
-          <select name="rooms">
-            <option value="">Cualquier</option>
-            <option value="1">1+</option>
-            <option value="2">2+</option>
-            <option value="3">3+</option>
-            <option value="4">4+</option>
-          </select>
-        </div>
-        <div class="filter-group">
-          <label>Tipo</label>
-          <select name="type">
-            <option value="">Cualquiera</option>
-            <option value="piso">Piso</option>
-            <option value="estudio">Estudio</option>
-            <option value="atico">Ático</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary btn-search" data-aos="fade-up" data-aos-delay="600">
-          Buscar pisos
-        </button>
-      </form>
+      <div class="search-card" data-aos="fade-up" data-aos-delay="400">
+        <form class="search-idealista" action="pisos.html" method="GET">
+          <div class="filters-grid">
+            <div class="filter-group">
+              <input type="text" name="location" placeholder=" Ciudad, barrio o calle" required />
+            </div>
+            <div class="filter-group">
+              <input type="number" name="price_min" placeholder="Precio mínimo (€)" />
+            </div>
+            <div class="filter-group">
+              <input type="number" name="price_max" placeholder="Precio máximo (€)" />
+            </div>
+            <div class="filter-group">
+              <select name="rooms">
+                <option value="">Habitaciones</option>
+                <option value="1">1+</option>
+                <option value="2">2+</option>
+                <option value="3">3+</option>
+                <option value="4">4+</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <select name="type">
+                <option value="">Tipo de inmueble</option>
+                <option value="piso">Piso</option>
+                <option value="estudio">Estudio</option>
+                <option value="atico">Ático</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary btn-search">
+            Buscar pisos
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- Propiedades Destacadas estilo Airbnb -->
+  <!-- Propiedades Destacadas -->
   <section class="container pt-16" data-aos="fade-up">
     <h2 class="title" data-aos="fade-up">Propiedades Destacadas</h2>
     <div class="grid-4 gap-4">
@@ -121,7 +107,7 @@
     </div>
   </section>
 
-  <!-- Testimonios estilo Idealista -->
+  <!-- Testimonios -->
   <section class="container mt-16" data-aos="fade-up">
     <h2 class="title" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
     <div class="grid-3 gap-6">
@@ -160,4 +146,3 @@
   <script id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
 </body>
 </html>
-```
