@@ -1,95 +1,77 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Encuentra tu próximo hogar con Habitya Living. Ofrecemos una amplia selección de propiedades en las mejores ubicaciones.">
-  <meta name="keywords" content="alquiler, pisos, inquilinos, propietarios, propiedades, Habitya Living">
-  <meta name="author" content="Habitya Living">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Habitya Living - Encuentra tu hogar ideal">
-  <meta property="og:description" content="Encuentra tu próximo hogar con Habitya Living. Ofrecemos una amplia selección de propiedades en las mejores ubicaciones.">
-  <meta property="og:image" content="URL_de_imagen_destacada.jpg">
-  <meta property="og:url" content="https://www.habityaliving.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Habitya Living - Encuentra tu hogar ideal">
-  <meta name="twitter:description" content="Encuentra tu próximo hogar con Habitya Living. Ofrecemos una amplia selección de propiedades en las mejores ubicaciones.">
-  <meta name="twitter:image" content="URL_de_imagen_destacada.jpg">
-  <title>Habitya Living - Encuentra tu hogar ideal</title>
+  <title>Habitya Living - Inicio</title>
   <link rel="stylesheet" href="css/estilos.css">
   <!-- AOS Animations CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <style>
-    /* Estilos mobile-first */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      padding: 1rem;
-    }
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 1rem;
-    }
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 1rem;
-    }
-    @media (min-width: 600px) {
-      .grid-4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .grid-3 {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 900px) {
-      .grid-4 {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Navbar estilo Airbnb -->
   <header class="header" data-aos="fade-down">
     <nav class="nav container">
-      <a href="index.html" class="logo" data-aos="zoom-in" data-aos-delay="100">Habitya Living</a>
-      <ul class="menu" data-aos="fade-down" data-aos-delay="200">
-        <li data-aos="fade-right" data-aos-delay="300"><a href="index.html">Inicio</a></li>
-        <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
-        <li data-aos="fade-right" data-aos-delay="400"><a href="inquilinos.html">Inquilinos</a></li>
-        <li data-aos="fade-right" data-aos-delay="450"><a href="propietarios.html">Propietarios</a></li>
-        <li data-aos="fade-right" data-aos-delay="500"><a href="contacto.html">Contacto</a></li>
+      <a href="index.html" class="logo">Habitya Living</a>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="pisos.html">Pisos</a></li>
+        <li><a href="inquilinos.html">Inquilinos</a></li>
+        <li><a href="propietarios.html">Propietarios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero + Búsqueda estilo Idealista + Airbnb -->
   <section class="hero" data-aos="zoom-in">
     <div class="hero-overlay"></div>
-    <div class="container hero-content" data-aos="fade-up" data-aos-delay="200">
-      <h1 class="title">Encuentra tu próximo hogar con Habitya Living</h1>
-      <form class="search-bar" action="pisos.html" method="GET">
-        <input type="text" name="location" placeholder="Ciudad, barrio o dirección" required />
-        <input type="date" name="start" />
-        <input type="date" name="end" />
-        <button type="submit" class="btn-primary">Buscar</button>
+    <div class="container hero-content">
+      <h1 class="title" data-aos="fade-up" data-aos-delay="200">
+        Encuentra tu hogar ideal con Habitya Living
+      </h1>
+      <form class="search-idealista" action="pisos.html" method="GET" data-aos="fade-up" data-aos-delay="400">
+        <div class="filter-group">
+          <label>Localidad</label>
+          <input type="text" name="location" placeholder="Ciudad, barrio o calle" required />
+        </div>
+        <div class="filter-group">
+          <label>Precio mínimo</label>
+          <input type="number" name="price_min" placeholder="€ desde" />
+        </div>
+        <div class="filter-group">
+          <label>Precio máximo</label>
+          <input type="number" name="price_max" placeholder="€ hasta" />
+        </div>
+        <div class="filter-group">
+          <label>Habitaciones</label>
+          <select name="rooms">
+            <option value="">Cualquier</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Tipo</label>
+          <select name="type">
+            <option value="">Cualquiera</option>
+            <option value="piso">Piso</option>
+            <option value="estudio">Estudio</option>
+            <option value="atico">Ático</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary btn-search" data-aos="fade-up" data-aos-delay="600">
+          Buscar pisos
+        </button>
       </form>
     </div>
   </section>
 
-  <!-- DESTACADOS -->
+  <!-- Propiedades Destacadas estilo Airbnb -->
   <section class="container pt-16" data-aos="fade-up">
-    <h2 class="title">Propiedades Destacadas</h2>
+    <h2 class="title" data-aos="fade-up">Propiedades Destacadas</h2>
     <div class="grid-4 gap-4">
       <div class="card" data-aos="fade-up" data-aos-delay="100">
         <img src="images/piso1_salon.jpg" alt="Piso Céntrico" />
@@ -126,11 +108,11 @@
     </div>
   </section>
 
-  <!-- TESTIMONIOS -->
+  <!-- Testimonios estilo Idealista -->
   <section class="container mt-16" data-aos="fade-up">
-    <h2 class="title">Lo que dicen nuestros clientes</h2>
+    <h2 class="title" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
     <div class="grid-3 gap-6">
-      <div class="review" data-aos="fade-right" data-aos-delay="100">
+      <div class="review" data-aos="fade-up" data-aos-delay="100">
         <p>"Excelente gestión y atención inmediata."</p>
         <strong>- Laura G.</strong>
       </div>
@@ -138,14 +120,14 @@
         <p>"Pisos impecables y en ubicaciones inmejorables."</p>
         <strong>- Marcos R.</strong>
       </div>
-      <div class="review" data-aos="fade-left" data-aos-delay="300">
+      <div class="review" data-aos="fade-up" data-aos-delay="300">
         <p>"La mejor experiencia de alquiler que he tenido."</p>
         <strong>- Ana P.</strong>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer class="footer container mt-16" data-aos="fade-up">
     <p>&copy; 2025 Habitya Living. Todos los derechos reservados.</p>
     <nav>
@@ -160,10 +142,8 @@
       if (window.AOS) AOS.init({ once: true, duration: 600 });
     });
   </script>
-  <script src="js/script.js" defer></script>
 
   <!-- HubSpot Embed Code -->
   <script id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
 </body>
 </html>
-```
