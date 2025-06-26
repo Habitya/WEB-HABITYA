@@ -18,7 +18,7 @@ WEB-HABITYA/
 ## 🚀 Descripción
 
 Este sitio web ofrece:
-- Presentación de la marca Habitya.
+- Presentación de la marca Habitya Living.
 - Acceso a funciones futuras para clientes y usuarios internos.
 - Base para futuras integraciones con sistemas de gestión.
 
