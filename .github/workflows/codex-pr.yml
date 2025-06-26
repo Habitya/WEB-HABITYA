@@ -44,3 +44,33 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "chore: cambios automáticos por Codex"
           git push origin main
+
+name: Deploy site
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0      # trae todo el historial, no sólo el último commit
+
+      - name: Pull latest main
+        run: git pull origin main --rebase
+
+      # aquí irían tus pasos de build, commit de cambios automáticos, etc.
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "Codex Bot"
+          git config user.email "bot@habityaliving.com"
+          git add .
+          git commit -m "Cambios automáticos por Codex"
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
