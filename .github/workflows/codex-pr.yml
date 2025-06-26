@@ -1,19 +1,20 @@
-name: Codex Auto-PR
+# .github/workflows/codex-pr.yml
+name: Codex Auto-Update
 
 on:
   push:
     branches:
       - main
 
+permissions:
+  contents: write   # permite push de commits
+
 jobs:
   codex:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v3
         with:
           token: ${{ secrets.BOT_GH_TOKEN }}
@@ -23,7 +24,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm install openai
 
       - name: Run Codex script
@@ -31,14 +32,15 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: node codex-update.js
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.BOT_GH_TOKEN }}
-          commit-message: "chore: cambios automáticos por Codex"
-          branch: codex-updates
-          title: "Actualizaciones automáticas con Codex"
-          body: |
-            Este PR incluye cambios sugeridos por Codex:
-            - SEO meta tags
-            - Mobile-first improvements
+      - name: Configure Git remote for push
+        run: |
+          git remote set-url origin https://x-access-token:${{ secrets.BOT_GH_TOKEN }}@github.com/${{ github.repository }}.git
+
+      - name: Commit & push changes
+        run: |
+          git config user.name "Codex Bot"
+          git config user.email "codex@habitya.com"
+          # solo commit si hay cambios
+          git add .
+          git diff-index --quiet HEAD || git commit -m "chore: cambios automáticos por Codex"
+          git push origin main
