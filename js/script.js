@@ -185,3 +185,8 @@ function submitInvoice() {
   closeModal();
   alert('Factura subida correctamente');
 }
+
+// Export functions for testing in Node
+if (typeof module !== 'undefined') {
+  module.exports = { initProgressChart, initIncomeChart };
+}
