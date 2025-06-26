@@ -18,23 +18,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install dependencies
-        run: |
-          # Si no usas npm, elimina estas líneas
-          npm ci
-
-      - name: Run Codex script
-        run: |
-          npm run codex
-
-      - name: Build site
-        run: |
-          npm run build
+      # QUITA los pasos de npm
 
       - name: Deploy to Netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod --dir=public
+          args: deploy --prod --dir=.
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
