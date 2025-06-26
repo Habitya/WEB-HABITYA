@@ -1,76 +1,37 @@
-# .github/workflows/codex-pr.yml
-name: Codex Auto-Update
+name: CI / Deploy
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
-permissions:
-  contents: write   # permite push de commits
-
 jobs:
-  codex:
+  build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.BOT_GH_TOKEN }}
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        run: npm install openai
-
-      - name: Run Codex script
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-        run: node codex-update.js
-
-      - name: Configure Git remote for push
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.BOT_GH_TOKEN }}@github.com/${{ github.repository }}.git
-
-      - name: Commit & push changes
-        run: |
-          git config user.name "Codex Bot"
-          git config user.email "codex@habitya.com"
-          # solo commit si hay cambios
-          git add .
-          git diff-index --quiet HEAD || git commit -m "chore: cambios automáticos por Codex"
-          git push origin main
-
-name: Deploy site
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 0      # trae todo el historial, no sólo el último commit
+          fetch-depth: 0
 
-      - name: Pull latest main
-        run: git pull origin main --rebase
-
-      # aquí irían tus pasos de build, commit de cambios automáticos, etc.
-
-      - name: Commit & push changes
+      - name: Install dependencies
         run: |
-          git config user.name "Codex Bot"
-          git config user.email "bot@habityaliving.com"
-          git add .
-          git commit -m "Cambios automáticos por Codex"
-          git push origin main
+          # Si no usas npm, elimina estas líneas
+          npm ci
+
+      - name: Run Codex script
+        run: |
+          npm run codex
+
+      - name: Build site
+        run: |
+          npm run build
+
+      - name: Deploy to Netlify
+        uses: netlify/actions/cli@master
+        with:
+          args: deploy --prod --dir=public
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
