@@ -309,4 +309,31 @@ a {
     max-width: 100%;
   }
 }
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 60px; /* Ajusta si tu header es más alto/bajo */
+}
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  transition: opacity 0.3s;
+}
+.logo-scroll {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.header.scrolled .logo-normal {
+  opacity: 0;
+  pointer-events: none;
+}
+.header.scrolled .logo-scroll {
+  opacity: 1;
+  pointer-events: auto;
+}
 
