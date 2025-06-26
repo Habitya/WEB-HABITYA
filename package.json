@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "openai": "^5.7.0"
+  },
+  "scripts": {
+    "test": "node test/checkImages.js"
   }
 }
