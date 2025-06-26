@@ -17,7 +17,6 @@
   <meta name="twitter:description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
   <meta name="twitter:image" content="images/hero-image.jpg">
   <link rel="stylesheet" href="css/estilos.css">
-  <!-- AOS Animations CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
@@ -48,6 +47,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
       gap: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      .grid-4, .grid-3 {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      }
     }
   </style>
 </head>
