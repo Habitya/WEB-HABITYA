@@ -337,3 +337,26 @@ a {
   pointer-events: auto;
 }
 
+/* Hero Banner */
+.hero {
+  position: relative;
+  background: url('../images/edificio_1.jpg') center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-light);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 4rem 1rem;
+}
