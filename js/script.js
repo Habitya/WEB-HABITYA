@@ -185,3 +185,22 @@ function submitInvoice() {
   closeModal();
   alert('Factura subida correctamente');
 }
+
+// ---------------------------
+// Carousel for featured homes
+// ---------------------------
+function initCarousels() {
+  document.querySelectorAll('.carousel').forEach(carousel => {
+    const imgs = carousel.querySelectorAll('img');
+    let idx = 0;
+    imgs.forEach((img, i) => img.classList.toggle('active', i === 0));
+    if (imgs.length < 2) return;
+    setInterval(() => {
+      imgs[idx].classList.remove('active');
+      idx = (idx + 1) % imgs.length;
+      imgs[idx].classList.add('active');
+    }, 3000);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initCarousels);

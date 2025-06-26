@@ -118,6 +118,8 @@ a {
   height: 12rem;
   object-fit: cover;
 }
+.carousel img { display: none; }
+.carousel img.active { display: block; }
 .card h3 {
   margin: 0.5rem 0;
 }
