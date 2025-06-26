@@ -1,0 +1,42 @@
+name: Codex Auto-PR
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  codex:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.BOT_GH_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install deps
+        run: npm install openai
+
+      - name: Run Codex script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node codex-update.js
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.BOT_GH_TOKEN }}
+          commit-message: "chore: cambios automáticos por Codex"
+          branch: codex-updates
+          title: "Actualizaciones automáticas con Codex"
+          body: |
+            Este PR incluye cambios sugeridos por Codex:
+            - SEO meta tags
+            - Mobile-first improvements
