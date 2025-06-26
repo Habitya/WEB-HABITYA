@@ -40,3 +40,14 @@ No requiere instalación. Para probarlo localmente:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Habitya/WEB-HABITYA.git
+   ```
+2. Ingresa al directorio del proyecto:
+   ```bash
+   cd WEB-HABITYA
+   ```
+3. Abre `index.html` en tu navegador o sirve la carpeta con un servidor web simple:
+   ```bash
+   # Ejemplo con Python
+   python3 -m http.server
+   ```
+   Luego visita http://localhost:8000 en tu navegador.
