@@ -336,4 +336,58 @@ a {
   opacity: 1;
   pointer-events: auto;
 }
+/* ENCABEZADO ESTILO AIRBNB/IDEALISTA */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,245,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+body {
+  padding-top: 80px; /* Ajusta según alto de tu header */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: opacity 0.3s ease;
+}
+/* Por defecto, se ve el logo completo */
+.logo-normal { opacity: 1; }
+/* El icono está oculto */
+.logo-scroll {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+/* Al hacer scroll: oculto logo-normal y muestro logo-scroll */
+.header.scrolled {
+  background: rgba(255,255,245,1);
+}
+.header.scrolled .logo-normal {
+  opacity: 0;
+  pointer-events: none;
+}
+.header.scrolled .logo-scroll {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ajustes responsive (opcional) */
+@media (max-width: 768px) {
+  .logo-img { height: 32px; }
+  body { padding-top: 70px; }
+}
 
