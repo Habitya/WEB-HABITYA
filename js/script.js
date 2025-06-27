@@ -193,3 +193,12 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
+// Cambia la clase 'scrolled' según posición de scroll
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('.header');
+  if (window.scrollY > 30) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
