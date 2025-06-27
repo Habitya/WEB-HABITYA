@@ -202,3 +202,11 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
 });
+// Toggle de filtros avanzados
+document.querySelector('.toggle-advanced').addEventListener('click', () => {
+  const adv = document.querySelector('.advanced-filters');
+  adv.classList.toggle('hidden');
+  // Cambiar el texto del botón
+  const btn = document.querySelector('.toggle-advanced');
+  btn.textContent = adv.classList.contains('hidden') ? 'Más filtros ▾' : 'Menos filtros ▴';
+});
