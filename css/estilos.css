@@ -91,6 +91,25 @@ a {
   display: none !important;
 }
 
+/* Hero section */
+.hero {
+  position: relative;
+  background: url('../images/edificio_2.jpg') center/cover no-repeat;
+  height: 400px;
+  display: flex;
+  align-items: center;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
 /* Títulos */
 .title {
   text-align: center;
