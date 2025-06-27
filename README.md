@@ -8,7 +8,6 @@ Plataforma web para Habitya, orientada a la gestión de alquileres residenciales
 
 WEB-HABITYA/
 ├── css/ # Hojas de estilo
-├── html/ # Archivos HTML
 ├── js/ # Scripts JavaScript
 ├── images/ # Recursos gráficos (opcional)
 ├── index.html # Página principal
@@ -40,3 +39,6 @@ No requiere instalación. Para probarlo localmente:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Habitya/WEB-HABITYA.git
+   cd WEB-HABITYA
+```
+2. Abre `index.html` en tu navegador favorito para explorar la aplicación.
