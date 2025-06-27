@@ -243,9 +243,10 @@ a {
 
 /* 🔍 Search Card */
 .search-card {
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #f7f7f5);
+  border: 1px solid #eceae4;
   border-radius: 1rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
@@ -293,11 +294,13 @@ a {
   border: none;
   border-radius: 0.75rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 .btn-search:hover {
   background-color: #b48f23;
   transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* 👁️ Responsive tweaks */
@@ -399,6 +402,20 @@ body {
 }
 .quick-filters input {
   flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  background: #fafafa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.quick-filters input:focus {
+  outline: none;
+  border-color: #DAA520;
+  box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.2);
+  background: #fff;
+}
+.quick-filters input::placeholder {
+  color: #999;
 }
 
 /* Toggle botón */
