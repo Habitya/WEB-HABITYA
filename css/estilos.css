@@ -390,4 +390,34 @@ body {
   .logo-img { height: 32px; }
   body { padding-top: 70px; }
 }
+/* Quick filters */
+.quick-filters {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.quick-filters input {
+  flex: 1;
+}
 
+/* Toggle botón */
+.btn-secondary.toggle-advanced {
+  background: transparent;
+  border: none;
+  color: #DAA520;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Advanced filters */
+.advanced-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.hidden { display: none; }
+
+/* Mantén tus estilos previos para .filter-group, .btn-search, etc. */
