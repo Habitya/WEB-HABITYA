@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="images/edificio_1.jpg">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -60,10 +60,10 @@
     <nav class="nav container">
       <a href="index.html" class="logo">Habitya Living</a>
       <ul class="menu">
-        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html" class="alt-font">Inicio</a></li>
         <li><a href="pisos.html">Pisos</a></li>
-        <li><a href="inquilinos.html">Inquilinos</a></li>
-        <li><a href="propietarios.html">Propietarios</a></li>
+        <li><a href="inquilinos.html" class="alt-font">Inquilinos</a></li>
+        <li><a href="propietarios.html" class="alt-font">Propietarios</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
@@ -73,9 +73,6 @@
   <section class="hero" data-aos="zoom-in">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-        Encuentra tu hogar ideal con Habitya Living
-      </h1>
       <div class="search-card" data-aos="fade-up" data-aos-delay="400">
         <form class="search-idealista" action="pisos.html" method="GET">
           <div class="filters-grid">
@@ -176,16 +173,41 @@
     <div class="grid-3 gap-6">
       <div class="review" data-aos="fade-up" data-aos-delay="100">
         <p>"Excelente gestión y atención inmediata."</p>
+        <div class="stars">★★★★★</div>
         <strong>- Laura G.</strong>
       </div>
       <div class="review" data-aos="fade-up" data-aos-delay="200">
         <p>"Pisos impecables y en ubicaciones inmejorables."</p>
+        <div class="stars">★★★★★</div>
         <strong>- Marcos R.</strong>
       </div>
       <div class="review" data-aos="fade-up" data-aos-delay="300">
         <p>"La mejor experiencia de alquiler que he tenido."</p>
+        <div class="stars">★★★★★</div>
         <strong>- Ana P.</strong>
       </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contact" class="container mt-16" data-aos="fade-up">
+    <h2 class="title">Contacto</h2>
+    <div class="form-card">
+      <form action="#" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" required>
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input id="telefono" name="telefono" type="tel">
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <button type="submit" class="btn-primary mt-4">Enviar</button>
+      </form>
     </div>
   </section>
 
