@@ -467,6 +467,39 @@ body {
 
 /* Mantén tus estilos previos para .filter-group, .btn-search, etc. */
 
+/* ===== Testimonios ===== */
+.testimonials {
+  background: #fffefb;
+  color: #0a1a2f;
+  padding: 2rem 0;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media(min-width: 640px) {
+  .testimonials-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(min-width: 1024px) {
+  .testimonials-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+.testimonial-card {
+  background: #fffefb;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  text-align: center;
+}
+.stars {
+  color: #996633;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.testimonial-name {
+  font-weight: 600;
+}
+
 /* ===== Footer ===== */
 .page-footer {
   background: var(--brand-primary);
