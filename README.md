@@ -40,3 +40,7 @@ No requiere instalación. Para probarlo localmente:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Habitya/WEB-HABITYA.git
+  cd WEB-HABITYA
+  ```
+2. Abre `index.html` en tu navegador.
+3. Si el proyecto incluye pruebas, ejecuta `npm test`.
