@@ -247,6 +247,28 @@ a {
   cursor: pointer;
 }
 
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  padding: 6rem 1rem 4rem;
+  background: url('../images/oficina_logo.jpg') center/cover no-repeat;
+  text-align: center;
+  color: #fff;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding-top: 2rem;
+}
+.hero .title {
+  color: #fff;
+}
+
 /* 🔍 Search Card */
 .search-card {
   background: linear-gradient(135deg, #ffffff, #f7f7f5);
