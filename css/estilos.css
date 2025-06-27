@@ -391,3 +391,17 @@ body {
   body { padding-top: 70px; }
 }
 
+/* Sección inferior de enlaces estilo Airbnb */
+.bottom-links {
+  background: #fff;
+  padding: 2rem 0;
+}
+.bottom-links h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+.bottom-links a {
+  color: var(--brand-secondary);
+  text-decoration: underline;
+}
+
