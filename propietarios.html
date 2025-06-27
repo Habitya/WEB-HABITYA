@@ -32,20 +32,33 @@
       <button onclick="loginOwner(event)">Entrar</button>
     </div>
 
-    <div id="dashboard-owner" class="hidden mt-8">
-      <h2>Resumen de Ingresos</h2>
-      <canvas id="incomeChart"></canvas>
-      <p>Totales: <span id="totalIncome"></span></p>
-      <p>Pendiente: <span id="pendingIncome"></span></p>
-      <div class="flex gap-4 mt-4">
-        <button onclick="verContratos()">Contratos</button>
-        <button onclick="openModal()">Subir Factura</button>
-        <button onclick="manageProperties()">Propiedades</button>
-        <button onclick="scheduleMaintenance()">Mantenimiento</button>
+      <div id="dashboard-owner" class="hidden mt-8">
+        <h2>Resumen de Ingresos</h2>
+        <canvas id="incomeChart"></canvas>
+        <p>Totales: <span id="totalIncome"></span></p>
+        <p>Pendiente: <span id="pendingIncome"></span></p>
+        <div class="flex gap-4 mt-4">
+          <button onclick="verContratos()">Contratos</button>
+          <button onclick="openModal()">Subir Factura</button>
+          <button onclick="manageProperties()">Propiedades</button>
+          <button onclick="scheduleMaintenance()">Mantenimiento</button>
+        </div>
       </div>
-    </div>
+
+      <div id="invoice-modal" class="modal hidden">
+        <div class="modal-content">
+          <h3>Nueva Factura</h3>
+          <input id="modal-amount" type="number" placeholder="Cantidad (€)">
+          <textarea id="modal-desc" placeholder="Descripción"></textarea>
+          <div class="flex justify-end gap-4">
+            <button onclick="closeModal()">Cancelar</button>
+            <button onclick="submitInvoice()">Enviar</button>
+          </div>
+        </div>
+      </div>
   </main>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
