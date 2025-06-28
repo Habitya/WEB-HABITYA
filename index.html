@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -43,6 +44,24 @@
     .search-card {
       margin: 1rem 0;
     }
+    .value-proposition {
+      background: #fffefb;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    .value-proposition h1 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      margin: 0 0 0.5rem;
+    }
+    .value-proposition p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1rem, 3vw, 1.25rem);
+      margin: 0 auto;
+      max-width: 600px;
+    }
     .filters-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -51,6 +70,9 @@
     @media (max-width: 600px) {
       .grid-4, .grid-3 {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+      }
+      .value-proposition {
+        padding: 1.5rem 1rem;
       }
     }
   </style>
@@ -79,9 +101,10 @@
   <section class="hero" data-aos="zoom-in">
   <div class="hero-overlay"></div>
   <div class="container hero-content">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-      Encuentra tu hogar ideal con Habitya Living
-    </h1>
+    <div class="value-proposition" data-aos="fade-up" data-aos-delay="200">
+      <h1>Tu alquiler en buenas manos</h1>
+      <p>Gestión completa de viviendas para propietarios que buscan tranquilidad, rentabilidad y cero complicaciones.</p>
+    </div>
 
     <div class="search-card" data-aos="fade-up" data-aos-delay="400">
       <form id="search-form" action="pisos.html" method="GET">
