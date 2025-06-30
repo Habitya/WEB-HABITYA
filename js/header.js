@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.nav-menu');
   if (toggle && menu) {
     toggle.addEventListener('click', () => {
-      menu.classList.toggle('visible');
+      menu.classList.toggle('open');
     });
   }
 });

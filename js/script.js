@@ -216,6 +216,6 @@ const menuBtn = document.querySelector('.nav-toggle');
 const menuEl = document.querySelector('.nav-menu');
 if (menuBtn && menuEl) {
   menuBtn.addEventListener('click', () => {
-    menuEl.classList.toggle('visible');
+    menuEl.classList.toggle('open');
   });
 }

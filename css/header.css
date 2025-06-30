@@ -1,63 +1,72 @@
 .site-header {
-  background: #fff;
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color .3s, box-shadow .3s;
   z-index: 1000;
+}
+.site-header.scrolled {
+  background-color: var(--color-fondo);
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-.nav.container {
+
+.nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  padding: var(--espacio-md) 0;
 }
+
 .logo img {
   height: 40px;
-  width: auto;
+  transition: height .3s;
 }
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
+.site-header.scrolled .logo img {
+  height: 32px;
 }
-.nav-menu a {
-  color: var(--color-primario, #002b45);
-  font-weight: 500;
-  padding: 0.5rem 0.75rem;
-}
+
+/* Toggle nav */
 .nav-toggle {
   display: none;
+  flex-direction: column;
+  gap: 4px;
   background: none;
   border: none;
   cursor: pointer;
-  flex-direction: column;
-  gap: 4px;
 }
 .nav-toggle span {
   display: block;
-  width: 25px;
-  height: 3px;
-  background: var(--color-primario, #002b45);
+  width: 24px;
+  height: 2px;
+  background: var(--color-primario);
+  transition: transform .3s;
 }
+
+/* Menú desktop */
+.nav-menu {
+  display: flex;
+  gap: var(--espacio-lg);
+}
+.nav-menu li a {
+  font-weight: 500;
+}
+/* Responsive */
 @media (max-width: 768px) {
+  .nav-toggle { display: flex; }
   .nav-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: fixed;
+    top: 0; right: -100%;
+    height: 100vh;
+    width: 240px;
+    background: var(--color-fondo);
     flex-direction: column;
-    background: #fff;
-    display: none;
-    padding: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: var(--espacio-xl);
+    gap: var(--espacio-md);
+    transition: right .3s;
   }
-  .nav-menu.visible {
-    display: flex;
-  }
-  .nav-toggle {
-    display: flex;
+  .nav-menu.open {
+    right: 0;
   }
 }
