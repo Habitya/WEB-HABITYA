@@ -1,0 +1,41 @@
+/* Import Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Colores corporativos */
+  --color-primario: #002b45;     /* Azul tinta */
+  --color-secundario: #a89f91;   /* Gris c\xc3\xa1lido */
+  --color-acento: #d4b27c;       /* Dorado champ\xc3\xa1n */
+  --color-fondo: #fff8f1;        /* Blanco c\xc3\xa1lido */
+  --color-texto: #333333;
+
+  /* Espaciados */
+  --espacio-xs: 4px;
+  --espacio-sm: 8px;
+  --espacio-md: 16px;
+  --espacio-lg: 24px;
+  --espacio-xl: 32px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  transition: color .3s;
+}
+a:hover {
+  color: var(--color-acento);
+}
