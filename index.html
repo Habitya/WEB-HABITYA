@@ -33,6 +33,22 @@
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1rem;
     }
+    .hero {
+      position: relative;
+      background: url('images/edificio_1.jpg') center/cover no-repeat;
+      padding: 4rem 1rem 6rem;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
     .search-card {
       background: #fff;
       border-radius: 16px;
