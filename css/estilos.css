@@ -24,14 +24,18 @@ a {
   color: inherit;
 }
 
-/* Header / Nav */
+/* Header / Nav - estilo Airbnb/Idealista */
 .header {
-  background: var(--brand-light);
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 40;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  width: 100%;
+  background: rgba(255,255,245,0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+body {
+  padding-top: 80px; /* Ajusta según alto de tu header */
 }
 .nav.container {
   max-width: 1200px;
@@ -321,35 +325,6 @@ a {
   display: block;
   transition: opacity 0.3s;
 }
-.logo-scroll {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-.header.scrolled .logo-normal {
-  opacity: 0;
-  pointer-events: none;
-}
-.header.scrolled .logo-scroll {
-  opacity: 1;
-  pointer-events: auto;
-}
-/* ENCABEZADO ESTILO AIRBNB/IDEALISTA */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255,255,245,0.95);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  transition: background 0.3s ease;
-}
-body {
-  padding-top: 80px; /* Ajusta según alto de tu header */
-}
-
 /* Logo */
 .logo {
   display: flex;
@@ -370,6 +345,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
+  pointer-events: none;
 }
 
 /* Al hacer scroll: oculto logo-normal y muestro logo-scroll */
