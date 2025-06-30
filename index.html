@@ -16,6 +16,7 @@
   <meta name="twitter:description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
   <meta name="twitter:image" content="images/hero-image.jpg">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
@@ -64,6 +65,21 @@
       <!-- Solo icono (aparece al hacer scroll) -->
       <img src="images/logo.png" alt="Habitya" class="logo-img logo-scroll">
     </a>
+    <form class="nav-search" action="pisos.html" method="GET">
+      <div class="search-item">
+        <label>Destino</label>
+        <input type="text" name="location" placeholder="¿Dónde?" required>
+      </div>
+      <div class="search-item">
+        <label>Min €</label>
+        <input type="number" name="price_min" placeholder="0">
+      </div>
+      <div class="search-item">
+        <label>Max €</label>
+        <input type="number" name="price_max" placeholder="1000">
+      </div>
+      <button type="submit">Buscar</button>
+    </form>
     <ul class="menu" data-aos="fade-down" data-aos-delay="200">
       <li data-aos="fade-right" data-aos-delay="300"><a href="index.html">Inicio</a></li>
       <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
@@ -82,57 +98,6 @@
       Encuentra tu hogar ideal con Habitya Living
     </h1>
 
-    <div class="search-card" data-aos="fade-up" data-aos-delay="400">
-      <form id="search-form" action="pisos.html" method="GET">
-        <!-- Filtros rápidos -->
-        <div class="quick-filters">
-          <input type="text" name="location" placeholder="Ciudad, barrio o calle" required>
-          <input type="number" name="price_min" placeholder="Precio mínimo (€)">
-          <input type="number" name="price_max" placeholder="Precio máximo (€)">
-        </div>
-
-        <!-- Botón desplegar filtros avanzados -->
-        <button type="button" class="btn-secondary toggle-advanced">Más filtros ▾</button>
-
-        <!-- Filtros avanzados ocultos inicialmente -->
-        <div class="advanced-filters hidden">
-          <div class="filter-group">
-            <label>Habitaciones</label>
-            <select name="rooms">
-              <option value="">Cualquiera</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Tipo de inmueble</label>
-            <select name="type">
-              <option value="">Cualquiera</option>
-              <option value="piso">Piso</option>
-              <option value="estudio">Estudio</option>
-              <option value="atico">Ático</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Duración mínima (meses)</label>
-            <input type="number" name="min_duration" placeholder="Ej. 6">
-          </div>
-          <div class="filter-group">
-            <label>Pets</label>
-            <select name="pets">
-              <option value="">Cualquiera</option>
-              <option value="yes">Permitidos</option>
-              <option value="no">No permitidos</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Botón de búsqueda principal -->
-        <button type="submit" class="btn-primary btn-search">Buscar pisos</button>
-      </form>
-    </div>
   </div>
 </section>
 
