@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -173,6 +174,25 @@
         </div>
       </div>
     </div>
+<div class="swiper-container properties-slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <!-- Reemplaza con .property-card -->
+      <div class="property-card">
+        <img src="images/piso1_salon.jpg" alt="Piso en el centro de Bilbao">
+        <div class="card-body">
+          <h3>Piso céntrico</h3>
+          <p>2 hab · 1 baño · 80 m²</p>
+          <span class="price">900 €/mes</span>
+          <a href="#" class="btn">Ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <!-- Repite más .swiper-slide según sea necesario -->
+  </div>
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
   </section>
 
   <!-- Testimonios -->
@@ -209,6 +229,7 @@
       if (window.AOS) AOS.init({ once: true, duration: 600 });
     });
   </script>
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
   <!-- HubSpot Embed Code -->
   <script id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
