@@ -97,8 +97,23 @@
   </div>
 </footer>
 
+<!-- Botón y panel del chatbot -->
+<button class="chatbot-btn" onclick="toggleAsistente()">💬</button>
+<div id="asistente-virtual" class="chatbot-panel hidden">
+  <div class="chat-header">
+    <strong>Habitya Bot</strong>
+    <button onclick="toggleAsistente()">×</button>
+  </div>
+  <div id="contenedor-chat" class="chat-body"></div>
+  <div class="chat-footer">
+    <input id="input-chat" type="text" placeholder="Escribe tu mensaje" />
+    <button onclick="enviarMensaje()">Enviar</button>
+  </div>
+</div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init({ duration: 600, once: true });</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
