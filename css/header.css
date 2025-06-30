@@ -1,0 +1,24 @@
+.site-header {
+  background: var(--brand-light);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav-grid ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+}
+
+.nav-grid a {
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: bold;
+}

@@ -1,0 +1,24 @@
+:root {
+  --brand-primary: #0D3B4F;
+  --brand-secondary: #57C7AC;
+  --brand-light: #F5F1E8;
+  --text-main: var(--brand-primary);
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--brand-light);
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hidden {
+  display: none !important;
+}
