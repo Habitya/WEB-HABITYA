@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="images/hero-image.jpg">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -51,6 +51,26 @@
       .grid-4, .grid-3 {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
       }
+    }
+
+    .value-prop-section {
+      background: #fffefb;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .value-prop-section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .value-prop-section p {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 1.125rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -135,6 +155,13 @@
     </div>
   </div>
 </section>
+
+  <section class="value-prop-section">
+    <div class="container">
+      <h2>Tu alquiler en buenas manos</h2>
+      <p>Gestión completa de viviendas para propietarios que buscan tranquilidad, rentabilidad y cero complicaciones.</p>
+    </div>
+  </section>
 
   <!-- Propiedades Destacadas -->
   <section class="container pt-16" data-aos="fade-up">
