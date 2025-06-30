@@ -16,13 +16,15 @@
   <meta name="twitter:description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
   <meta name="twitter:image" content="images/hero-image.jpg">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
+      padding-top: 80px;
     }
     .container {
       padding: 1rem;
@@ -31,21 +33,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1rem;
-    }
-    .btn-primary {
-      padding: 0.5rem 1rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .search-card {
-      margin: 1rem 0;
-    }
-    .filters-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 0.5rem;
     }
     @media (max-width: 600px) {
       .grid-4, .grid-3 {
@@ -56,85 +43,47 @@
 </head>
 <body>
   <!-- Navbar -->
-  <header class="header" data-aos="fade-down">
-  <nav class="nav container">
-    <a href="index.html" class="logo" style="position: relative;">
-      <!-- Logo + texto (visible al principio) -->
-      <img src="images/logo_nombre_byn.png" alt="Habitya Living" class="logo-img logo-normal">
-      <!-- Solo icono (aparece al hacer scroll) -->
-      <img src="images/logo.png" alt="Habitya" class="logo-img logo-scroll">
-    </a>
-    <ul class="menu" data-aos="fade-down" data-aos-delay="200">
-      <li data-aos="fade-right" data-aos-delay="300"><a href="index.html">Inicio</a></li>
-      <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
-      <li data-aos="fade-right" data-aos-delay="400"><a href="inquilinos.html">Inquilinos</a></li>
-      <li data-aos="fade-right" data-aos-delay="450"><a href="propietarios.html">Propietarios</a></li>
-      <li data-aos="fade-right" data-aos-delay="500"><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
-</header>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="index.html" class="logo">
+        <img id="logo-img" src="images/logo_nombre_byn.png" alt="Habitya Living logo">
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="pisos.html">Pisos</a></li>
+        <li><a href="inquilinos.html">Inquilinos</a></li>
+        <li><a href="propietarios.html">Propietarios</a></li>
+        <li><a href="opiniones.html">Opiniones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero + Buscador Elegante -->
   <section class="hero" data-aos="zoom-in">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-      Encuentra tu hogar ideal con Habitya Living
-    </h1>
-
-    <div class="search-card" data-aos="fade-up" data-aos-delay="400">
-      <form id="search-form" action="pisos.html" method="GET">
-        <!-- Filtros rápidos -->
-        <div class="quick-filters">
-          <input type="text" name="location" placeholder="Ciudad, barrio o calle" required>
-          <input type="number" name="price_min" placeholder="Precio mínimo (€)">
-          <input type="number" name="price_max" placeholder="Precio máximo (€)">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Gestionamos tu alquiler con confianza</h1>
+      <form class="search-form" action="pisos.html" method="GET">
+        <input type="text" name="ubicacion" placeholder="Ubicación" required>
+        <select name="tipo">
+          <option value="">Tipo de vivienda</option>
+          <option value="piso">Piso</option>
+          <option value="atico">Ático</option>
+          <option value="estudio">Estudio</option>
+        </select>
+        <div class="price-range">
+          <label>Precio (€):</label>
+          <input type="range" name="precio" min="200" max="3000" step="50">
+          <output name="precio-output">1.000 €</output>
         </div>
-
-        <!-- Botón desplegar filtros avanzados -->
-        <button type="button" class="btn-secondary toggle-advanced">Más filtros ▾</button>
-
-        <!-- Filtros avanzados ocultos inicialmente -->
-        <div class="advanced-filters hidden">
-          <div class="filter-group">
-            <label>Habitaciones</label>
-            <select name="rooms">
-              <option value="">Cualquiera</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Tipo de inmueble</label>
-            <select name="type">
-              <option value="">Cualquiera</option>
-              <option value="piso">Piso</option>
-              <option value="estudio">Estudio</option>
-              <option value="atico">Ático</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Duración mínima (meses)</label>
-            <input type="number" name="min_duration" placeholder="Ej. 6">
-          </div>
-          <div class="filter-group">
-            <label>Pets</label>
-            <select name="pets">
-              <option value="">Cualquiera</option>
-              <option value="yes">Permitidos</option>
-              <option value="no">No permitidos</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Botón de búsqueda principal -->
-        <button type="submit" class="btn-primary btn-search">Buscar pisos</button>
+        <button type="submit" class="btn-search">Buscar</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Propiedades Destacadas -->
   <section class="container pt-16" data-aos="fade-up">
@@ -209,9 +158,11 @@
       if (window.AOS) AOS.init({ once: true, duration: 600 });
     });
   </script>
+  <script src="js/hero.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/script.js"></script>
 
   <!-- HubSpot Embed Code -->
   <script id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
 </body>
 </html>
-```
