@@ -1,0 +1,41 @@
+.property-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform .3s, box-shadow .3s;
+}
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.property-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+.card-body {
+  padding: var(--espacio-md);
+}
+.card-body h3 {
+  margin-bottom: var(--espacio-xs);
+  font-size: 1.2rem;
+}
+.card-body p {
+  font-size: 0.9rem;
+  color: var(--color-secundario);
+  margin-bottom: var(--espacio-sm);
+}
+.price {
+  font-weight: 600;
+  color: var(--color-primario);
+}
+.btn {
+  display: inline-block;
+  margin-top: var(--espacio-sm);
+  padding: var(--espacio-xs) var(--espacio-md);
+  background: var(--color-acento);
+  color: var(--color-fondo);
+  border-radius: 4px;
+  text-align: center;
+}
