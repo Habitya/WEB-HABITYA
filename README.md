@@ -40,3 +40,16 @@ No requiere instalación. Para probarlo localmente:
 1. Clona el repositorio:
    ```bash
    git clone https://github.com/Habitya/WEB-HABITYA.git
+   ```
+2. Entra en el directorio del proyecto:
+   ```bash
+   cd WEB-HABITYA
+   ```
+3. Asegúrate de contar con [Node.js](https://nodejs.org/) y `npx` instalados.
+4. Inicia un servidor local para revisar la web:
+   ```bash
+   npx serve .
+   ```
+5. Abre `http://localhost:3000` en tu navegador.
+
+---
