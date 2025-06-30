@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Habitya Living - Pisos</title>
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/header.css">
   <!-- HubSpot Embed Code -->
   <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
 </head>
@@ -13,6 +14,25 @@
   <header class="header">
     <nav class="nav container">
       <a href="index.html" class="logo">Habitya Living</a>
+      <form class="nav-search" action="pisos.html" method="GET">
+        <div class="search-item">
+          <label>Destino</label>
+          <input type="text" name="location" placeholder="¿Dónde?" required>
+        </div>
+        <div class="search-item">
+          <label>Min €</label>
+          <input type="number" name="price_min" placeholder="0">
+        </div>
+      <div class="search-item">
+        <label>Max €</label>
+        <input type="number" name="price_max" placeholder="1000">
+      </div>
+      <div class="search-item">
+        <label>Duración (meses)</label>
+        <input type="number" name="duration" placeholder="Ej. 6">
+      </div>
+      <button type="submit">Buscar</button>
+    </form>
       <ul class="menu">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="pisos.html" class="active">Pisos</a></li>
