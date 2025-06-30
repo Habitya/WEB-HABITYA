@@ -3,215 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Habitya Living - Encuentra tu hogar ideal</title>
-  <meta name="description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
-  <meta name="keywords" content="alquiler, pisos, apartamentos, Bilbao, Habitya Living, inquilinos, propietarios">
-  <meta name="author" content="Habitya Living">
-  <meta property="og:title" content="Habitya Living - Encuentra tu hogar ideal">
-  <meta property="og:description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
-  <meta property="og:image" content="images/hero-image.jpg">
-  <meta property="og:url" content="https://www.habityaliving.com">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Habitya Living - Encuentra tu hogar ideal">
-  <meta name="twitter:description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
-  <meta name="twitter:image" content="images/hero-image.jpg">
-  <link rel="stylesheet" href="css/estilos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      padding: 1rem;
-    }
-    .grid-4, .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 1rem;
-    }
-    .btn-primary {
-      padding: 0.5rem 1rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .search-card {
-      margin: 1rem 0;
-    }
-    .filters-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 0.5rem;
-    }
-    @media (max-width: 600px) {
-      .grid-4, .grid-3 {
-        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-      }
-    }
-  </style>
+  <title>Habitya Living</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/chatbot.css">
+  <link rel="stylesheet" href="css/testimonios.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
-  <!-- Navbar -->
-  <header class="header" data-aos="fade-down">
-  <nav class="nav container">
-    <a href="index.html" class="logo" style="position: relative;">
-      <!-- Logo + texto (visible al principio) -->
-      <img src="images/logo_nombre_byn.png" alt="Habitya Living" class="logo-img logo-normal">
-      <!-- Solo icono (aparece al hacer scroll) -->
-      <img src="images/logo.png" alt="Habitya" class="logo-img logo-scroll">
-    </a>
-    <ul class="menu" data-aos="fade-down" data-aos-delay="200">
-      <li data-aos="fade-right" data-aos-delay="300"><a href="index.html">Inicio</a></li>
-      <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
-      <li data-aos="fade-right" data-aos-delay="400"><a href="inquilinos.html">Inquilinos</a></li>
-      <li data-aos="fade-right" data-aos-delay="450"><a href="propietarios.html">Propietarios</a></li>
-      <li data-aos="fade-right" data-aos-delay="500"><a href="contacto.html">Contacto</a></li>
-    </ul>
-  </nav>
+
+<header class="site-header">
+  <div class="container nav-grid">
+    <div class="nav-left">
+      <a href="index.html"><img src="images/logo_nombre_byn.png" alt="Logo Habitya"></a>
+    </div>
+    <div class="nav-center">
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="propietarios.html">Propietarios</a></li>
+          <li><a href="inquilinos.html">Inquilinos</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <a href="#login">Login</a>
+    </div>
+  </div>
 </header>
 
-  <!-- Hero + Buscador Elegante -->
-  <section class="hero" data-aos="zoom-in">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-      Encuentra tu hogar ideal con Habitya Living
-    </h1>
-
-    <div class="search-card" data-aos="fade-up" data-aos-delay="400">
-      <form id="search-form" action="pisos.html" method="GET">
-        <!-- Filtros rápidos -->
-        <div class="quick-filters">
-          <input type="text" name="location" placeholder="Ciudad, barrio o calle" required>
-          <input type="number" name="price_min" placeholder="Precio mínimo (€)">
-          <input type="number" name="price_max" placeholder="Precio máximo (€)">
-        </div>
-
-        <!-- Botón desplegar filtros avanzados -->
-        <button type="button" class="btn-secondary toggle-advanced">Más filtros ▾</button>
-
-        <!-- Filtros avanzados ocultos inicialmente -->
-        <div class="advanced-filters hidden">
-          <div class="filter-group">
-            <label>Habitaciones</label>
-            <select name="rooms">
-              <option value="">Cualquiera</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Tipo de inmueble</label>
-            <select name="type">
-              <option value="">Cualquiera</option>
-              <option value="piso">Piso</option>
-              <option value="estudio">Estudio</option>
-              <option value="atico">Ático</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Duración mínima (meses)</label>
-            <input type="number" name="min_duration" placeholder="Ej. 6">
-          </div>
-          <div class="filter-group">
-            <label>Pets</label>
-            <select name="pets">
-              <option value="">Cualquiera</option>
-              <option value="yes">Permitidos</option>
-              <option value="no">No permitidos</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Botón de búsqueda principal -->
-        <button type="submit" class="btn-primary btn-search">Buscar pisos</button>
-      </form>
+<section class="hero" id="inicio">
+  <div class="hero-bg" style="background-image: url('images/edificio_1.jpg');">
+    <div class="hero-overlay">
+      <div class="hero-search container">
+        <!-- Aquí irá el buscador -->
+        <h1>Encuentra tu próximo hogar</h1>
+      </div>
     </div>
   </div>
 </section>
 
-  <!-- Propiedades Destacadas -->
-  <section class="container pt-16" data-aos="fade-up">
-    <h2 class="title" data-aos="fade-up">Propiedades Destacadas</h2>
-    <div class="grid-4 gap-4">
-      <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <img src="images/piso1_salon.jpg" alt="Piso Céntrico" />
-        <div class="card-content">
-          <h3>Piso Céntrico</h3>
-          <p>Bilbao</p>
-          <p><strong>75€ / noche</strong></p>
-        </div>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="200">
-        <img src="images/piso2_salon.jpg" alt="Ático Moderno" />
-        <div class="card-content">
-          <h3>Ático Moderno</h3>
-          <p>Bilbao</p>
-          <p><strong>60€ / noche</strong></p>
-        </div>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="300">
-        <img src="images/piso3_salon.jpg" alt="Estudio Acogedor" />
-        <div class="card-content">
-          <h3>Estudio Acogedor</h3>
-          <p>Bilbao</p>
-          <p><strong>45€ / noche</strong></p>
-        </div>
-      </div>
-      <div class="card" data-aos="fade-up" data-aos-delay="400">
-        <img src="images/piso4.jpg" alt="Loft Vintage" />
-        <div class="card-content">
-          <h3>Loft Vintage</h3>
-          <p>Getxo</p>
-          <p><strong>80€ / noche</strong></p>
-        </div>
-      </div>
+<section class="novedades container" data-aos="fade-up">
+  <h2>Últimos pisos disponibles</h2>
+  <div class="property-card">
+    <img src="images/piso1_salon.jpg" alt="Piso en el centro de Bilbao">
+    <div class="card-body">
+      <h3>Piso céntrico</h3>
+      <p>2 hab · 1 baño · 80 m²</p>
+      <span class="price">900 €/mes</span>
+      <a href="#" class="btn">Ver detalles</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Testimonios -->
-  <section class="container mt-16" data-aos="fade-up">
-    <h2 class="title" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
-    <div class="grid-3 gap-6">
-      <div class="review" data-aos="fade-up" data-aos-delay="100">
-        <p>"Excelente gestión y atención inmediata."</p>
-        <strong>- Laura G.</strong>
-      </div>
-      <div class="review" data-aos="fade-up" data-aos-delay="200">
-        <p>"Pisos impecables y en ubicaciones inmejorables."</p>
-        <strong>- Marcos R.</strong>
-      </div>
-      <div class="review" data-aos="fade-up" data-aos-delay="300">
-        <p>"La mejor experiencia de alquiler que he tenido."</p>
-        <strong>- Ana P.</strong>
-      </div>
+<section class="comunidad container" data-aos="fade-up">
+  <h2>Lo que dicen de nosotros</h2>
+  <div class="testimonios-grid">
+    <div class="testimonio">
+      <img src="images/chatbot_chica.jpg" alt="María G.">
+      <h4>María G.</h4>
+      <p>“Gracias a Habitya, alquilé mi piso en solo una semana. ¡Muy profesionales!”</p>
     </div>
-  </section>
+    <div class="testimonio">
+      <img src="images/chatbot_chico.jpg" alt="Javier L.">
+      <h4>Javier L.</h4>
+      <p>“La gestión fue impecable y siempre tuve atención personalizada.”</p>
+    </div>
+    <div class="testimonio">
+      <img src="images/logo_nombre_color.jpg" alt="Ana R.">
+      <h4>Ana R.</h4>
+      <p>“Lo recomiendo totalmente. Me despreocupé de todo y me mantienen informado.”</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer container mt-16" data-aos="fade-up">
-    <p>&copy; 2025 Habitya Living. Todos los derechos reservados.</p>
-    <nav>
-      <a href="#">Ayuda</a> · <a href="#">Privacidad</a> · <a href="#">Términos</a>
-    </nav>
-  </footer>
+<footer class="site-footer" style="background-color: #446a4a;">
+  <div class="container footer-content">
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <p>Email: info@habityaliving.com</p>
+      <p>Tel: 600 000 000</p>
+    </div>
+    <div class="footer-col">
+      <h4>Habitya Living</h4>
+      <p>Somos una empresa joven que transforma la gestión de alquileres en Bizkaia. Profesionalidad, cercanía y digitalización al servicio del propietario y el inquilino.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Habitya Living. Todos los derechos reservados.</p>
+  </div>
+</footer>
 
-  <!-- Scripts AOS e init -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.AOS) AOS.init({ once: true, duration: 600 });
-    });
-  </script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 600, once: true });</script>
 
-  <!-- HubSpot Embed Code -->
-  <script id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
 </body>
 </html>
-```

@@ -1,0 +1,19 @@
+.site-footer {
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-col {
+  flex: 1 1 200px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 1rem;
+}
