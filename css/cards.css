@@ -1,0 +1,33 @@
+.property-card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+.property-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card-body {
+  padding: 1rem;
+}
+.card-body h3 {
+  margin: 0 0 0.5rem;
+}
+.price {
+  font-weight: bold;
+  color: var(--brand-secondary);
+}
+.btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--brand-secondary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+.properties-slider {
+  padding: 2rem 0;
+}
