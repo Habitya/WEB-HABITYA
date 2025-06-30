@@ -1,0 +1,7 @@
+/* Ajuste de tamaño del logo */
+.nav-left img {
+  height: 60px;
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
