@@ -316,7 +316,7 @@ a {
   height: 60px; /* Ajusta si tu header es más alto/bajo */
 }
 .logo-img {
-  height: 40px;
+  height: 32px;
   width: auto;
   display: block;
   transition: opacity 0.3s;
@@ -357,7 +357,7 @@ body {
   height: 60px;
 }
 .logo-img {
-  height: 40px;
+  height: 32px;
   width: auto;
   transition: opacity 0.3s ease;
 }
@@ -387,7 +387,7 @@ body {
 
 /* Ajustes responsive (opcional) */
 @media (max-width: 768px) {
-  .logo-img { height: 32px; }
+  .logo-img { height: 28px; }
   body { padding-top: 70px; }
 }
 /* Quick filters */
