@@ -1,0 +1,48 @@
+.testimonios {
+  padding: var(--espacio-xl) 0;
+  text-align: center;
+}
+
+.testimonios h2 {
+  font-size: 2rem;
+  margin-bottom: var(--espacio-lg);
+  color: var(--color-primario);
+}
+
+.testimonios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espacio-lg);
+}
+
+.testimonio {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: var(--espacio-lg);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.testimonio:hover {
+  transform: translateY(-6px);
+}
+
+.testimonio img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--espacio-sm);
+}
+
+.testimonio h4 {
+  font-size: 1rem;
+  color: var(--color-primario);
+  margin-bottom: var(--espacio-xs);
+}
+
+.testimonio p {
+  font-size: 0.95rem;
+  color: var(--color-secundario);
+  line-height: 1.4;
+}
