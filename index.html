@@ -49,33 +49,29 @@
       position: relative;
       z-index: 1;
     }
-    .search-card {
+    .search-form {
       background: #fff;
       border-radius: 16px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 1rem;
       margin: 1rem auto;
       max-width: 900px;
-    }
-    .quick-filters, .advanced-filters {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 0.75rem;
-      margin-bottom: 0.75rem;
+      align-items: center;
     }
-    .input-icon { position: relative; }
-    .input-icon .icon {
-      position: absolute;
-      left: 0.75rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: #555;
-    }
-    .input-icon input {
+    .search-form input,
+    .search-form select {
       width: 100%;
-      padding: 0.5rem 0.75rem 0.5rem 2rem;
+      padding: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 8px;
+    }
+    .price-range {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .btn-search {
       background-color: #2563eb;
@@ -85,16 +81,13 @@
       padding: 0.75rem 1.5rem;
       font-weight: 500;
       cursor: pointer;
-      width: 100%;
-      max-width: 200px;
-      margin: 0.5rem auto;
-      display: block;
+      grid-column: 1 / -1;
     }
     @media (max-width: 600px) {
       .grid-4, .grid-3 {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
       }
-      .quick-filters, .advanced-filters {
+      .search-form {
         grid-template-columns: 1fr;
       }
     }
@@ -123,74 +116,26 @@
 
   <!-- Hero + Buscador Elegante -->
   <section class="hero" data-aos="zoom-in">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-      Encuentra tu hogar ideal con Habitya Living
-    </h1>
-
-    <div class="search-card" data-aos="fade-up" data-aos-delay="400">
-      <form id="search-form" action="pisos.html" method="GET">
-        <!-- Filtros rápidos -->
-          <div class="quick-filters">
-            <div class="input-icon">
-              <span class="icon">📍</span>
-              <input type="text" name="location" placeholder="Ciudad, barrio o calle" required>
-            </div>
-            <div class="input-icon">
-              <span class="icon">€</span>
-              <input type="number" name="price_min" placeholder="Mínimo">
-            </div>
-            <div class="input-icon">
-              <span class="icon">€</span>
-              <input type="number" name="price_max" placeholder="Máximo">
-            </div>
-          </div>
-
-        <!-- Botón desplegar filtros avanzados -->
-        <button type="button" class="btn-secondary toggle-advanced">Más filtros ▾</button>
-
-        <!-- Filtros avanzados ocultos inicialmente -->
-        <div class="advanced-filters hidden">
-          <div class="filter-group">
-            <label>Habitaciones</label>
-            <select name="rooms">
-              <option value="">Cualquiera</option>
-              <option value="1">1+</option>
-              <option value="2">2+</option>
-              <option value="3">3+</option>
-              <option value="4">4+</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Tipo de inmueble</label>
-            <select name="type">
-              <option value="">Cualquiera</option>
-              <option value="piso">Piso</option>
-              <option value="estudio">Estudio</option>
-              <option value="atico">Ático</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label>Duración mínima (meses)</label>
-            <input type="number" name="min_duration" placeholder="Ej. 6">
-          </div>
-          <div class="filter-group">
-            <label>Pets</label>
-            <select name="pets">
-              <option value="">Cualquiera</option>
-              <option value="yes">Permitidos</option>
-              <option value="no">No permitidos</option>
-            </select>
-          </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Gestionamos tu alquiler con confianza</h1>
+      <form class="search-form" action="pisos.html" method="GET">
+        <input type="text" name="ubicacion" placeholder="Ubicación" required>
+        <select name="tipo">
+          <option value="">Tipo de vivienda</option>
+          <option value="piso">Piso</option>
+          <option value="atico">Ático</option>
+          <option value="estudio">Estudio</option>
+        </select>
+        <div class="price-range">
+          <label>Precio (€):</label>
+          <input type="range" name="precio" min="200" max="3000" step="50">
+          <output name="precio-output">1.000 €</output>
         </div>
-
-        <!-- Botón de búsqueda principal -->
-        <button type="submit" class="btn-search">🔍 Buscar pisos</button>
+        <button type="submit" class="btn-search">Buscar</button>
       </form>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Propiedades Destacadas -->
   <section class="container pt-16" data-aos="fade-up">
