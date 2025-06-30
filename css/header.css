@@ -18,6 +18,13 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* Tamaño y colocación del logo */
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
 .nav-menu {
   list-style: none;
   display: flex;
