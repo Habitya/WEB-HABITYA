@@ -17,10 +17,10 @@
   <meta name="twitter:image" content="images/hero-image.jpg">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
     }
@@ -69,18 +69,17 @@
       <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
       <li data-aos="fade-right" data-aos-delay="400"><a href="inquilinos.html">Inquilinos</a></li>
       <li data-aos="fade-right" data-aos-delay="450"><a href="propietarios.html">Propietarios</a></li>
-      <li data-aos="fade-right" data-aos-delay="500"><a href="contacto.html">Contacto</a></li>
     </ul>
   </nav>
 </header>
 
   <!-- Hero + Buscador Elegante -->
   <section class="hero" data-aos="zoom-in">
-  <div class="hero-overlay"></div>
-  <div class="container hero-content">
-    <h1 class="title" data-aos="fade-up" data-aos-delay="200">
-      Encuentra tu hogar ideal con Habitya Living
-    </h1>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="title hero-title" data-aos="fade-up" data-aos-delay="200">
+        Encuentra tu hogar ideal con Habitya Living
+      </h1>
 
     <div class="search-card" data-aos="fade-up" data-aos-delay="400">
       <form id="search-form" action="pisos.html" method="GET">
@@ -176,30 +175,47 @@
   </section>
 
   <!-- Testimonios -->
-  <section class="container mt-16" data-aos="fade-up">
-    <h2 class="title" data-aos="fade-up">Lo que dicen nuestros clientes</h2>
-    <div class="grid-3 gap-6">
-      <div class="review" data-aos="fade-up" data-aos-delay="100">
-        <p>"Excelente gestión y atención inmediata."</p>
-        <strong>- Laura G.</strong>
-      </div>
-      <div class="review" data-aos="fade-up" data-aos-delay="200">
-        <p>"Pisos impecables y en ubicaciones inmejorables."</p>
-        <strong>- Marcos R.</strong>
-      </div>
-      <div class="review" data-aos="fade-up" data-aos-delay="300">
-        <p>"La mejor experiencia de alquiler que he tenido."</p>
-        <strong>- Ana P.</strong>
+  <section class="testimonials mt-16" data-aos="fade-up">
+    <div class="container">
+      <h2 class="title">Confianza que se siente</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Excelente gestión y atención inmediata."</p>
+          <p class="testimonial-name">Laura G.</p>
+          <p class="testimonial-city">Bilbao Centro</p>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"Pisos impecables y en ubicaciones inmejorables."</p>
+          <p class="testimonial-name">Marcos R.</p>
+          <p class="testimonial-city">Casco Viejo</p>
+        </div>
+        <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">"La mejor experiencia de alquiler que he tenido."</p>
+          <p class="testimonial-name">Ana P.</p>
+          <p class="testimonial-city">Indautxu</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer container mt-16" data-aos="fade-up">
+  <footer class="page-footer mt-16" data-aos="fade-up">
+    <div class="footer-content container">
+      <section>
+        <h3>Habitya Living</h3>
+        <p>Tu hogar ideal en Bilbao y alrededores.</p>
+      </section>
+      <section>
+        <h3>Contacto</h3>
+        <p><a href="contacto.html">Formulario de contacto</a></p>
+        <p><a href="mailto:info@habityaliving.com">info@habityaliving.com</a></p>
+        <p>Tel: 555-123-456</p>
+      </section>
+    </div>
     <p>&copy; 2025 Habitya Living. Todos los derechos reservados.</p>
-    <nav>
-      <a href="#">Ayuda</a> · <a href="#">Privacidad</a> · <a href="#">Términos</a>
-    </nav>
   </footer>
 
   <!-- Scripts AOS e init -->
