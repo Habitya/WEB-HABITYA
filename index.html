@@ -17,13 +17,45 @@
   <meta name="twitter:description" content="Descubre pisos y apartamentos en alquiler con Habitya Living. Encuentra tu hogar ideal en Bilbao y sus alrededores.">
   <meta name="twitter:image" content="images/hero-image.jpg">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
       padding-top: 80px;
+    }
+    .header {
+      background: #fff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1rem;
+    }
+    .menu {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .menu a {
+      color: var(--color-primario, #002b45);
+      padding: 0.5rem 0.75rem;
+      font-weight: 500;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--color-primario, #002b45);
     }
     .container {
       padding: 1rem;
@@ -74,6 +106,21 @@
       margin: 0.5rem auto;
       display: block;
     }
+    @media (max-width: 768px) {
+      .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: #fff;
+        display: none;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      .menu.open { display: flex; }
+      .menu-toggle { display: block; }
+    }
     @media (max-width: 600px) {
       .grid-4, .grid-3 {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
@@ -94,6 +141,7 @@
       <!-- Solo icono (aparece al hacer scroll) -->
       <img src="images/logo.png" alt="Habitya" class="logo-img logo-scroll">
     </a>
+    <button class="menu-toggle" aria-label="Menú">☰</button>
     <ul class="menu" data-aos="fade-down" data-aos-delay="200">
       <li data-aos="fade-right" data-aos-delay="300"><a href="index.html">Inicio</a></li>
       <li data-aos="fade-right" data-aos-delay="350"><a href="pisos.html">Pisos</a></li>
@@ -248,6 +296,7 @@
       if (window.AOS) AOS.init({ once: true, duration: 600 });
     });
   </script>
+  <script src="js/script.js"></script>
 
   <!-- HubSpot Embed Code -->
   <script id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>

@@ -210,3 +210,12 @@ document.querySelector('.toggle-advanced').addEventListener('click', () => {
   const btn = document.querySelector('.toggle-advanced');
   btn.textContent = adv.classList.contains('hidden') ? 'Más filtros ▾' : 'Menos filtros ▴';
 });
+
+// Menú responsive
+const menuBtn = document.querySelector('.menu-toggle');
+const menuEl = document.querySelector('.menu');
+if (menuBtn && menuEl) {
+  menuBtn.addEventListener('click', () => {
+    menuEl.classList.toggle('open');
+  });
+}
