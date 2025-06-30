@@ -1,0 +1,28 @@
+.site-footer {
+  background: #f5f5f5;
+  color: #333;
+  padding: 2rem 0;
+}
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-col h4 {
+  margin-bottom: 0.5rem;
+}
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 0.25rem;
+}
+.footer-bottom {
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 0.875rem;
+}

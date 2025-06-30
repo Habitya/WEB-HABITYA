@@ -1,0 +1,6 @@
+:root {
+  --brand-primary: #0D3B4F;
+  --brand-secondary: #57C7AC;
+  --brand-light: #F5F1E8;
+  --text-main: var(--brand-primary);
+}
