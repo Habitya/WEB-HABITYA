@@ -9,9 +9,10 @@
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/cards.css">
   <link rel="stylesheet" href="css/footer.css">
-  <link rel="stylesheet" href="css/chatbot.css">
   <link rel="stylesheet" href="css/testimonios.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <!-- HubSpot Embed Code -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="https://js-eu1.hs-scripts.com/146431036.js"></script>
 </head>
 <body>
 
@@ -97,19 +98,6 @@
   </div>
 </footer>
 
-<!-- Botón y panel del chatbot -->
-<button class="chatbot-btn" onclick="toggleAsistente()">💬</button>
-<div id="asistente-virtual" class="chatbot-panel hidden">
-  <div class="chat-header">
-    <strong>Habitya Bot</strong>
-    <button onclick="toggleAsistente()">×</button>
-  </div>
-  <div id="contenedor-chat" class="chat-body"></div>
-  <div class="chat-footer">
-    <input id="input-chat" type="text" placeholder="Escribe tu mensaje" />
-    <button onclick="enviarMensaje()">Enviar</button>
-  </div>
-</div>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init({ duration: 600, once: true });</script>

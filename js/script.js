@@ -1,37 +1,5 @@
 // js/script.js
 
-// Chatbot toggle
-function toggleAsistente() {
-  document.getElementById('asistente-virtual').classList.toggle('hidden');
-}
-
-// Send chat message stub
-function enviarMensaje() {
-  const cont = document.getElementById('contenedor-chat');
-  const input = document.getElementById('input-chat');
-  const texto = input.value.trim();
-  if (!texto) return;
-
-  // Usuario
-  const usr = document.createElement('div');
-  usr.textContent = 'Tú: ' + texto;
-  usr.style.textAlign = 'right';
-  usr.style.marginBottom = '0.5rem';
-  cont.appendChild(usr);
-
-  input.value = '';
-  cont.scrollTop = cont.scrollHeight;
-
-  // Respuesta del asistente
-  setTimeout(() => {
-    const resp = document.createElement('div');
-    resp.textContent = 'Asistente: Procesando...';
-    resp.style.marginBottom = '0.5rem';
-    cont.appendChild(resp);
-    cont.scrollTop = cont.scrollHeight;
-  }, 500);
-}
-
 // ---------------------------
 // Inquilino: login & chart
 // ---------------------------
