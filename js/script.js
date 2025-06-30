@@ -185,18 +185,11 @@ function submitInvoice() {
   closeModal();
   alert('Factura subida correctamente');
 }
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
-  if (window.scrollY > 20) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-});
 // Cambia la clase 'scrolled' según posición de scroll
+const SCROLL_THRESHOLD = 30;
 window.addEventListener('scroll', () => {
   const header = document.querySelector('.header');
-  if (window.scrollY > 30) {
+  if (window.scrollY > SCROLL_THRESHOLD) {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
