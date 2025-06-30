@@ -186,7 +186,7 @@ function submitInvoice() {
   alert('Factura subida correctamente');
 }
 window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.site-header');
   if (window.scrollY > 20) {
     header.classList.add('scrolled');
   } else {
@@ -195,7 +195,7 @@ window.addEventListener('scroll', () => {
 });
 // Cambia la clase 'scrolled' según posición de scroll
 window.addEventListener('scroll', () => {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.site-header');
   if (window.scrollY > 30) {
     header.classList.add('scrolled');
   } else {
@@ -212,10 +212,10 @@ document.querySelector('.toggle-advanced').addEventListener('click', () => {
 });
 
 // Menú responsive
-const menuBtn = document.querySelector('.menu-toggle');
-const menuEl = document.querySelector('.menu');
+const menuBtn = document.querySelector('.nav-toggle');
+const menuEl = document.querySelector('.nav-menu');
 if (menuBtn && menuEl) {
   menuBtn.addEventListener('click', () => {
-    menuEl.classList.toggle('open');
+    menuEl.classList.toggle('visible');
   });
 }
